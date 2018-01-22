@@ -55,7 +55,8 @@ THEME(){
 
 DOWNLOADING(){
 	DLTORRENT(){
-	URL="https://ipfs.io/ipfs/QmdUU&&&Qqoqu1M7DDkBuXar5A33ZSuSbBEsCCvCBYzvzow/No-Intro-Collecton_2016-01-03_Fixed"
+    #URL="https://ipfs.io/ipfs/QmdUU&&&Qqoqu1M7DDkBuXar5A33ZSuSbBEsCCvCBYzvzow/No-Intro-Collection_2016-01-03_Fixed"
+	URL="https://archive.org/download/No-Intro-Collection_2016-01-03_Fixed"
 	TORRENT="$URL/No-Intro-Collection_2016-01-03_Fixed.torrent"
 	echo "Downloading though torrent from: " $TORRENT
 	read -rp $'Use [T]ransmission, [R]torrent or [D]eluge: ' -ei $'T' OPTION;
@@ -76,7 +77,8 @@ DOWNLOADING(){
 	fi
 	}
 	DLHTTPS(){
-	URL="https://ipfs.io/ipfs/QmdUU&&&Qqoqu1M7DDkBuXar5A33ZSuSbBEsCCvCBYzvzow/No-Intro-Collecton_2016-01-03_Fixed"
+	#URL="https://ipfs.io/ipfs/QmdUU&&&Qqoqu1M7DDkBuXar5A33ZSuSbBEsCCvCBYzvzow/No-Intro-Collection_2016-01-03_Fixed"
+	URL="https://archive.org/download/No-Intro-Collection_2016-01-03_Fixed"
 	read -rp $'Download [A]ll or [I]ndividual files: ' -ei $'A' OPTION;
 	if [ $OPTION = "A" ]; then
 	echo "You chose to download [A]ll: " $OPTION
@@ -89,12 +91,6 @@ DOWNLOADING(){
 	cd $DLDIR
 	read -rsp $'Press [ENTER] to continue...\n'
 	fi
-
-
-
-
-
-
 	}
 
 read -rp $'Full [T]orrent or individual file through [H]ttps : ' -ei $'H' OPTION;
