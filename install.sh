@@ -81,7 +81,7 @@ DOWNLOADING(){
 	if [ $OPTION = "A" ]; then
 	echo "You chose to download [A]ll: " $OPTION
 	cd $DLDIR
-	wget -r -np -R "ïndex.html*" $URL
+	wget -A zip -r -l 1 -nd $URL -P $DLDIR
 	read -rsp $'Press [ENTER] to continue...\n'
 	fi
 	if [ $OPTION = "I" ]; then
