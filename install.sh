@@ -1,8 +1,8 @@
 #!/bin/bash
 echo "This script will download and extract the selected GOODROM set to its corresponding directories in your rom folder."
 CONFIG(){
-	ROMDIR="~/RetroPie/roms"
-	WORKDIR="~/RetroPie-Goodrom-Full-Romsets"
+	ROMDIR="$HOME/RetroPie/roms"
+	WORKDIR="$HOME/RetroPie-Goodrom-Full-Romsets"
 	DLDIR=~/RetroPie-Goodrom-Full-Romsets/Romsets
 	MENUDIR="/opt/retropie/configs/goodromdl"
 	THEMEDIR="/opt/retropie/configs/all/emulationstation/themes/carbon-custom"
@@ -82,13 +82,13 @@ DOWNLOADING(){
 	read -rp $'Download [A]ll or [I]ndividual files: ' -ei $'A' OPTION;
 	if [ $OPTION = "A" ]; then
 	echo "You chose to download [A]ll: " $OPTION
-	cd $DLDIR
+	cd $DLDIR || exit
 	wget -A zip -r -l 1 -nd $URL -P $DLDIR
 	read -rsp $'Press [ENTER] to continue...\n'
 	fi
 	if [ $OPTION = "I" ]; then
 	echo "You chose to download [I]ndividual: " $OPTION
-	cd $DLDIR
+	cd $DLDIR || exit
 	read -rsp $'Press [ENTER] to continue...\n'
 	fi
 	}
