@@ -1,4 +1,5 @@
 #!/bin/bash
+set -euo pipefail
 echo "This script will download and extract the selected GOODROM set to its corresponding directories in your rom folder."
 CONFIG(){
 	ROMDIR="$HOME/RetroPie/roms"
